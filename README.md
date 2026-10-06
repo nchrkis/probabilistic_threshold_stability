@@ -1,6 +1,6 @@
 # KL-based Diagnostics for Threshold Stability
 
-This repository contains the code, preprocessed data, and supplementary figures used for the computational study in the manuscript:
+This repository contains the code, processed data, and supplementary figures used for the computational study in the manuscript:
 
 **Crossing the Line: KL-Based Diagnostics for Threshold Stability in Probabilistic Classifiers**  
 *Submitted to: Neurocomputing*
