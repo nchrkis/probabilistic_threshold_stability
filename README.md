@@ -17,7 +17,7 @@ Step-to-step changes in predicted probabilities are converted into Bernoulli KL 
 
 1. **Stepwise KL displacement**: $D_{\mathrm{step}} = D_{\mathrm{KL}}((p_{\mathrm{curr}}) \parallel (p_{\mathrm{prev}}))$
 2. **Exact threshold boundary**: $C_{\mathrm{exact}} = D_{\mathrm{KL}}((\tau) \parallel (p_{\mathrm{prev}}))$
-3. **Pinsker certificate**: $C_{\mathrm{Pinsker}} = 2|p_{\mathrm{prev}} - \tau|^2$ (labeled as `IG_min` in the code)
+3. **Pinsker certificate**: $C_{\mathrm{Pinsker}} = 2|p_{\mathrm{prev}} - \tau|^2$ (labeled as `c_pinsker` in the code)
 
 If a threshold decision flips between successive training sizes, the exact mathematical boundary implies that the displacement must exceed the exact boundary (and by extension, the conservative Pinsker certificate):
 
