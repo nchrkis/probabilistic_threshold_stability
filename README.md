@@ -1,11 +1,11 @@
-# Information-Cost Diagnostics for Threshold Instability
+# KL-based Diagnostics for Threshold Stability
 
 This repository contains the code, preprocessed data, and supplementary figures used for the computational study in the manuscript:
 
-**Information-Cost Diagnostics for Threshold Instability in Probabilistic Classifiers**  
-*Submitted to: Knowledge-Based Systems*
+**Crossing the Line: KL-Based Diagnostics for Threshold Stability in Probabilistic Classifiers**  
+*Submitted to: Neurocomputing*
 
-The analysis demonstrates how information-cost diagnostics can be computed from standard probabilistic classifier outputs to measure threshold instability across multiple domains, models, and operating points. 
+The analysis demonstrates how KL-based diagnostics can be computed from standard probabilistic classifier outputs to measure threshold instability across multiple domains, models, and operating points. 
 
 The study evaluates four probabilistic classifiers (Logistic Regression, Random Forest, XGBoost, and a one-hidden-layer Artificial Neural Network) across five public binary classification datasets.
 
@@ -15,13 +15,13 @@ The script `generate_multidomain_stability_figures.py` runs a progressive Monte 
 
 Step-to-step changes in predicted probabilities are converted into Bernoulli KL displacement quantities. For a reference probability $p_{\mathrm{prev}}$ and a new probability $p_{\mathrm{curr}}$ under a threshold $\tau$, the key diagnostic quantities are:
 
-1. **Stepwise KL displacement**: $IG_{\mathrm{step}} = D_{\mathrm{KL}}((p_{\mathrm{curr}}) \parallel (p_{\mathrm{prev}}))$
+1. **Stepwise KL displacement**: $D_{\mathrm{step}} = D_{\mathrm{KL}}((p_{\mathrm{curr}}) \parallel (p_{\mathrm{prev}}))$
 2. **Exact threshold boundary**: $C_{\mathrm{exact}} = D_{\mathrm{KL}}((\tau) \parallel (p_{\mathrm{prev}}))$
 3. **Pinsker certificate**: $C_{\mathrm{Pinsker}} = 2|p_{\mathrm{prev}} - \tau|^2$ (labeled as `IG_min` in the code)
 
 If a threshold decision flips between successive training sizes, the exact mathematical boundary implies that the displacement must exceed the exact boundary (and by extension, the conservative Pinsker certificate):
 
-$IG_{\mathrm{step}} \ge C_{\mathrm{exact}} \ge C_{\mathrm{Pinsker}}$
+$D_{\mathrm{step}} \ge C_{\mathrm{exact}} \ge C_{\mathrm{Pinsker}}$
 
 *Note: The empirical quantities in this repository measure predictive-distribution displacement between successive fitted classifiers. They should not be interpreted as formal Bayesian posterior-to-prior information gain.*
 
@@ -83,9 +83,9 @@ The key empirical quantities found in `theorem_points_long.csv` are:
 
 | Variable |	Meaning |
 |---|---|
-| ig_step |	Stepwise Bernoulli KL displacement. |
+| d_step |	Stepwise Bernoulli KL displacement. |
 | c_exact |	Exact Bernoulli threshold boundary cost. |
-| ig_min	| Conservative Pinsker threshold certificate. |
+| c_pinsker	| Conservative Pinsker threshold certificate. |
 | rho_exact	| Exact boundary ratio (ig_step / c_exact). |
 | rho_pinsker	| Pinsker boundary ratio (ig_step / ig_min). |
 | flip |	Indicator that the threshold decision changed between successive training sizes. |
@@ -154,7 +154,7 @@ If you use this repository, please cite the manuscript:
 
 ```text
 Christakis, N., and Drikakis, D. (2026)
-Information-Cost Diagnostics for Threshold Instability in Probabilistic Classifiers.
-Submitted to: Knowledge-Based Systems
+Crossing the Line: KL-Based Diagnostics for Threshold Stability in Probabilistic Classifiers.
+Submitted to: Neurocomputing
 ```
 ```
