@@ -2,8 +2,8 @@
 
 This repository contains the code, processed data, and supplementary figures used for the computational study in the manuscript:
 
-**Crossing the Line: KL-Based Diagnostics for Threshold Stability in Probabilistic Classifiers**  
-*Submitted to: Neurocomputing*
+**Exact Kullback–Leibler Boundaries for Threshold-Decision Stability in Probabilistic Classifiers**  
+*Submitted to: Mathematics*
 
 The analysis demonstrates how KL-based diagnostics can be computed from standard probabilistic classifier outputs to measure threshold instability across multiple domains, models, and operating points. 
 
@@ -155,7 +155,7 @@ If you use this repository, please cite the manuscript:
 
 ```text
 Christakis, N., and Drikakis, D. (2026)
-Crossing the Line: KL-Based Diagnostics for Threshold Stability in Probabilistic Classifiers.
-Submitted to: Neurocomputing
+Exact Kullback–Leibler Boundaries for Threshold-Decision Stability in Probabilistic Classifiers
+Submitted to: Mathematics
 ```
 ```
