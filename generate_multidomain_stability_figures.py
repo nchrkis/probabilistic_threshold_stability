@@ -1784,13 +1784,18 @@ def plot_stability_performance_tradeoff(
         figsize=(9, 6.2)
     )
 
+    df = df.rename(columns={
+        "model_label": "Model",
+        "dataset_label": "Dataset",
+        "brier_mean": "Brier score",
+    })
     sns.scatterplot(
         data=df,
         x="flip_percent",
         y="auc_mean",
-        hue="model_label",
-        style="dataset_label",
-        size="brier_mean",
+        hue="Model",
+        style="Dataset",
+        size="Brier score",
         sizes=(60, 220),
         alpha=0.85,
         ax=ax,
@@ -2095,6 +2100,7 @@ def plot_final_auroc_brier(
         dodge=0.35,
         markers="o",
         errorbar=None,
+        linestyle="none",
         ax=axes[0],
     )
 
@@ -2124,6 +2130,7 @@ def plot_final_auroc_brier(
         dodge=0.35,
         markers="o",
         errorbar=None,
+        linestyle="none",
         ax=axes[1],
     )
 
